@@ -50,7 +50,6 @@ export async function getStaticPaths() {
 // Fetch data at build time
 export async function getStaticProps({ params }) {
   const post = await getPostDetails(params.slug);
-  console.log("🚀 ~ file: [slug].jsx ~ line 44 ~ getStaticProps ~ post", post);
 
   return {
     props: { post },
