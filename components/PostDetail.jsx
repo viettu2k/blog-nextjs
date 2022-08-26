@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/dist/client/image";
 import moment from "moment";
 
 const PostDetail = ({ post }) => {
@@ -47,7 +47,7 @@ const PostDetail = ({ post }) => {
         );
       case "image":
         return (
-          <img
+          <Image
             key={index}
             alt={obj.title}
             height={obj.height}
@@ -64,16 +64,20 @@ const PostDetail = ({ post }) => {
     <>
       <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
         <div className="relative overflow-hidden shadow-md mb-6">
-          <img
+          <Image
             src={post.featuredImage.url}
-            alt=""
-            className="object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
+            alt={post.title}
+            className="object-top object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="cover"
           />
         </div>
         <div className="px-4 lg:px-0">
           <div className="flex items-center mb-8 w-full">
             <div className="hidden md:flex justify-center lg:mb-0 lg:w-auto mr-8 items-center">
-              <img
+              <Image
                 alt={post.author.name}
                 height="30px"
                 width="30px"

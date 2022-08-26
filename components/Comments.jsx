@@ -7,9 +7,13 @@ import { getComments } from "../services";
 const Comments = ({ slug }) => {
   const [comments, setComments] = useState([]);
 
-  useEffect(() => {
-    getComments(slug).then((result) => setComments(result));
-  }, []);
+  useEffect(
+    () => {
+      getComments(slug).then((result) => setComments(result));
+    },
+    // eslint-disable-next-line
+    []
+  );
 
   return (
     <>
